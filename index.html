@@ -16,9 +16,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+
+    <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+    <!--Laad in feedbackWidget -->
+    <script type="text/javascript" src="js/feedbackWidget.js"></script>
 </head>
 <body>
 
+<form action="" method="post">
+    <input type="button" name="ok" value="ok" id="okButton">
+</form>
 
 <div id="feedback-success" class="alert alert-success" role="alert">
     <p>Veel succes met deze module!</p>
@@ -29,27 +38,10 @@
 </div>
 
 <script>
-    class FeedbackWidget {
-        constructor(elementId) {
-            this._elementId = elementId;
-        }
-
-        get elementId() { //getter, set keyword voor setter methode
-            return this._elementId();
-        }
-
-        show() {
-            var x = document.getElementById(this._elementId);
-            x.style.display = "block";
-        }
-
-        hide() {
-            var x = document.getElementById(this._elementId);
-            x.style.display = "none";
-        }
-    }
+    $("#okButton").on("click", function() {
+        alert("The button was clicked.");
+    });
 </script>
-
 
 </body>
 </html>
