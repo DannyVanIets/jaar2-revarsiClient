@@ -11,9 +11,14 @@
 <script type="text/javascript" src="jasmine/lib/jasmine/boot.js"></script>
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="../js/feedbackWidget.js"></script>
+<div w3-include-html="content.html"></div>
 
 </head>
 <body>
+
+<div id="feedback-danger" class="alert alert-danger" role="alert" style="display:none">
+    <p>Pas op voor loslopende bits.</p>
+</div>
 
 <script>
 
@@ -35,7 +40,6 @@ describe("Application initialisation", function() {
     expect(result).toBe(true);
   });
 });
-
 
 </script>
 

@@ -1,7 +1,7 @@
 $(function () {
     console.log("Ready!");
     let fw = new FeedbackWidget("feedback-danger");
-    fw.show();
+    fw.hide();
 });
 
 class FeedbackWidget {
@@ -10,7 +10,7 @@ class FeedbackWidget {
     }
 
     get elementId() { //getter, set keyword voor setter methode
-        return this._elementId();
+        return this._elementId;
     }
 
     show() {
