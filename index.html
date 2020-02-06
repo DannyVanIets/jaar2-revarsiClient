@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <title>Javascript getting started</title>
 
+    <style>
+        .background-red {
+            background-color: red;
+        }
+
+        .background-green {
+            background-color: green;
+        }
+    </style>
+
+    <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -17,9 +30,6 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
 
-    <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-
     <!--Laad in feedbackWidget -->
     <script type="text/javascript" src="js/feedbackWidget.js"></script>
 </head>
@@ -29,11 +39,11 @@
     <input type="button" name="ok" value="ok" id="okButton">
 </form>
 
-<div id="feedback-success" class="alert alert-success" role="alert">
+<div id="feedback-success" class="alert" role="alert" style="display:none">
     <p>Veel succes met deze module!</p>
 </div>
 
-<div id="feedback-danger" class="alert alert-danger" role="alert" style="display:none">
+<div id="feedback-danger" class="alert" role="alert" style="display:none">
     <p>Pas op voor loslopende bits.</p>
 </div>
 
