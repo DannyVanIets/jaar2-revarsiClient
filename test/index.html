@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<div id="feedback-danger" class="alert alert-danger" role="alert" style="display:none">
+<div id="feedback-danger" class="alert alert-danger" role="alert" style="display: none">
     <p>Pas op voor loslopende bits.</p>
 </div>
 
@@ -39,6 +39,18 @@ describe("Application initialisation", function() {
   	const result = myApp.init();
     expect(result).toBe(true);
   });
+});
+
+describe("FeedbackWidget checks", function() {
+
+    it("Feedback-danger bestaat", function() {
+        expect("feedback-danger").toBeDefined();
+    });
+
+    it("Feedback-danger heeft style=display: none", function() {
+        var elementExists = document.getElementById("feedback-danger");
+        expect($(elementExists).attr('style')).toBe('display: none');
+    });
 });
 
 </script>
