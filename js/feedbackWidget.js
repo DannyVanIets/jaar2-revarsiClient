@@ -19,7 +19,6 @@ class FeedbackWidget {
 
     constructor(elementId) {
         this._elementId = elementId;
-        this.i = 0;
     }
 
     get elementId() { //getter, set keyword voor setter methode
@@ -31,14 +30,22 @@ class FeedbackWidget {
 
         x.style.display = "block";
         $(x).text(message);
-        this.log(message);
+
+        let logObject = {
+            message: message,
+            type: type
+        };
+
+        this.log(logObject);
 
         if(type === "success")
         {
+            $(x).removeClass("alert-danger");
             $(x).addClass("alert-success");
         }
         else
         {
+            $(x).removeClass("alert-success");
             $(x).addClass("alert-danger");
         }
     }
@@ -49,8 +56,18 @@ class FeedbackWidget {
     }
 
     log(message){
-        localStorage.setItem("feedback_widget" + this.i, JSON.stringify(message));
-        this.i = this.i + 1;
+        let logMessages = [];
+
+        if(localStorage.length !== 0){
+            logMessages = JSON.parse(localStorage.getItem("feedback_widget"));
+        }
+
+        if(logMessages.length >= 10){
+            logMessages.pop();
+        }
+
+        logMessages.unshift(message);
+        localStorage.setItem("feedback_widget", JSON.stringify(logMessages));
     }
 
     removeLog(key){
@@ -62,17 +79,13 @@ class FeedbackWidget {
     }
 
     history(){
-        this.historyMessages = [];
+        let arrayLogs = [];
+        let logString = "";
 
-        for(let j = 0, len = localStorage.length; j < len; j++){
-            if(j != len){
-                this.historyMessages.push(JSON.parse(localStorage.getItem("feedback_widget" + j)) + "\n");
-            } else {
-                this.historyMessages.push(JSON.parse(localStorage.getItem("feedback_widget" + j)));
-            }
-        }
+        arrayLogs = JSON.parse(localStorage.getItem("feedback_widget"));
 
-        this.historyMessageWithoutKommas = this.historyMessages.toString().replace(/,/g, "");
-        this.show(this.historyMessageWithoutKommas, "onbekend");
+        arrayLogs.forEach(x => logString += `type: ${x.type}    -   ${x.message} \n`);
+
+        console.log(logString);
     }
 }
