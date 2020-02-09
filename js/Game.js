@@ -2,15 +2,13 @@ const url = "/api/url";
 
 const Game = (function(url){
 
-    console.log(url);
+    let configMap = {
+        apiUrl : url
+    };
 
     //Private function init
     const privateInit = function(){
-        console.log("Private information!");
-    };
-
-    let configMap = {
-        api : url
+        console.log(configMap.apiUrl);
     };
 
     //Waarde/object geretourneerd aan de outer scope
