@@ -10,7 +10,7 @@ $(function () {
 
     fw.show(logShow.message, logShow.type);
     fw.show("Niet in slaap vallen!", "danger");
-    fw.show("test!", "danger");
+    fw.show("Pas op!", "danger");
 
     fw.history();
 });
