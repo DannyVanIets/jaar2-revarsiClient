@@ -43,67 +43,7 @@
         alert("The button was clicked.");
     });
 
-    /*
-        1. Module is een autonomous function en wordt direct uitgevoerd
-        2. Eem module heef teen eigen scope, zonder return niet toegankelijk
-        voor de outer scope (voor de buitenwereld)
-        3. Tweede paramaterhaken kunnen gebruikt worden voor het initieel doorgeven
-        van waarden aan de autonomous function
-        4. Functions in de module zijn alleen beschikbaar binneen de module scope,
-        tenzij zij geretourneerd worden bijvoorbeeld via een obect literal.
-     */
-    /*const game = (function ($) {
 
-        //configMap
-        const configMap = {
-            host: "superduper.com",
-            api: "api.superduper.com"
-        };
-
-        //stateMap
-        let stateMap = {
-
-        };
-
-        //private function
-        const spelen = function(){};
-
-        //public function
-        const init = function(){
-            console.log("Init gestart");
-            this.Model.init();
-        };
-
-        return {
-            init: init,
-            _spelen: spelen
-        };
-
-    })(); // Paramter voor autonome function
-
-    //Property aan game toegevoegd.
-     game.Model = (function () {
-        //configMap
-        const configMap = {
-
-        };
-
-        //stateMap
-        let stateMap = {
-
-        };
-
-        //public function
-        const init = function(){
-            console.log("Init in module gestart"); //Dit returnt het.
-        };
-
-        return {
-            init: init
-        };
-    });
-
-    game.init();*/
 
 </script>
 

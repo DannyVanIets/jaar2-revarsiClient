@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callback voorbeeld</title>
+</head>
+<body>
+    Callback voorbeeld in de console! Dit is voor Monkey level 3 taak 1
+</body>
+</html>
+
+<script>
+    function ingredientenVerzamen(callableFunction) {
+        setTimeout( function () {
+            console.log("Ingredienten verzameld");
+            callableFunction();
+        }, 500);
+    }
+
+    function dinerKoken() {
+        console.log("Lekker roeren in de soep");
+    }
+
+    ingredientenVerzamen(dinerKoken);
+</script>
