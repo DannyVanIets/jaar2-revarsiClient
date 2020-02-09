@@ -43,7 +43,11 @@
         alert("The button was clicked.");
     });
 
+    function afterInit(){
+        console.log("Game init voltooid");
+    }
 
+    Game.init(afterInit);
 
 </script>
 

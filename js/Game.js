@@ -13,11 +13,12 @@ const Game = (function(url){
 
     //Waarde/object geretourneerd aan de outer scope
     return {
-        init: privateInit
+        init: function(){
+            privateInit();
+            afterInit();
+        }
     }
 })(url);
-
-Game.init();
 
 Game.Reversi = (function () {
     console.log("Hallo vanuit module Reversi");
