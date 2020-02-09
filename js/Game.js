@@ -18,3 +18,21 @@ const Game = (function(url){
 })(url);
 
 Game.init();
+
+Game.Reversi = (function () {
+    console.log("Hallo vanuit module Reversi");
+
+    let configMap = {
+
+    };
+
+    const privateInit = function(){
+        console.log("Doing private stuff");
+    };
+
+    return {
+        init: function(){
+            privateInit();
+        }
+    };
+})();
