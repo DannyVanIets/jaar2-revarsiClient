@@ -11,6 +11,7 @@
 <script type="text/javascript" src="jasmine/lib/jasmine/boot.js"></script>
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="../js/feedbackWidget.js"></script>
+<script type="text/javascript" src="../js/Game.js"></script>
 <div w3-include-html="content.html"></div>
 
 </head>
@@ -50,6 +51,17 @@ describe("FeedbackWidget checks", function() {
     it("Feedback-danger heeft style=display: none", function() {
         var elementExists = document.getElementById("feedback-danger");
         expect($(elementExists).attr('style')).toBe('display: none');
+    });
+});
+
+describe("Init checks in Game modules", function() {
+
+    it("Init bestaat in Game.Data", function() {
+        expect(Game.Data.init).toBeDefined();
+    });
+
+    it("Init bestaat in Game.Model", function() {
+        expect(Game.Model.init).toBeDefined();
     });
 });
 

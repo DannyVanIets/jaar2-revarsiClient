@@ -26,13 +26,57 @@ Game.Reversi = (function () {
 
     };
 
+    //Private method
     const privateInit = function(){
         console.log("Doing private stuff");
     };
 
+    //You can also declare a public method directly into the return. Is also allowed!
     return {
         init: function(){
             privateInit();
         }
+    };
+})();
+
+Game.Data = (function () {
+
+    let configMap = {
+
+    };
+
+    //Private method
+    const privateInit = function(){
+        console.log("Doing private stuff");
+    };
+
+    //Public method thanks to the return.
+    const init = function(){
+        privateInit();
+    };
+
+    return {
+        init: init
+    };
+})();
+
+Game.Model = (function () {
+
+    let configMap = {
+
+    };
+
+    //Private method
+    const privateInit = function(){
+        console.log("Doing private stuff");
+    };
+
+    //Public method thanks to the return.
+    const init = function(){
+        privateInit();
+    };
+
+    return {
+        init: init
     };
 })();

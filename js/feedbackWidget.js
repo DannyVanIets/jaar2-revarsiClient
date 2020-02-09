@@ -27,8 +27,7 @@ class FeedbackWidget {
 
     show(message, type) {
         var x = document.getElementById(this._elementId);
-
-        x.style.display = "block";
+        //x.style.display = "block";
         $(x).text(message);
 
         let logObject = {
