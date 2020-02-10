@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>monkeyLevel4Taak1</title>
+
+    <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+
+<div class="result"></div>
+
+</body>
+</html>
+
+<script>
+    /*const url =
+        $.get( url, function( data ) {
+            $( ".result" ).html( data );
+            alert( "Load was performed." );
+        });*/
+
+    /*const url = 'http://api.openweathermap.org/data/2.5/weather?q=zwolle&apikey=42c9b15341d326a9341fa3ee0160d5dc';
+    const promise = $.get(url);
+    console.log(promise);
+
+    const getWeatherData = function(){
+        const url = 'http://api.openweathermap.org/data/2.5/weather?q=zwolle&apikey=42c9b15341d326a9341fa3ee0160d5dc';
+        return $.get(url);
+
+    };
+
+    getWeatherData().then(d => {
+        console.log(d);
+    });
+
+    getWeatherData().then(d => {
+        return {
+            data: d,
+            meta: 'vanuit eerste schakel van de chain'
+        }
+    }).then(r => {
+        console.log(`Bericht ontvangen in tweede schakel: ${r.meta}`);
+        throw new Error('Error gegooid');
+    }).catch(e => {
+        console.log(`Error opgevangen, error bericht: ${e.message}`);
+    });
+    */
+</script>

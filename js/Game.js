@@ -43,7 +43,14 @@ Game.Reversi = (function () {
 Game.Data = (function () {
 
     let configMap = {
+        apiKey: "42c9b15341d326a9341fa3ee0160d5dc"
+    };
 
+    const get = function(url){
+        return $.get(url)
+            .then(r => {return r})
+            .catch(e => {console.log(e.message);
+            });
     };
 
     //Private method
