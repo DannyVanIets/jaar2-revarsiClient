@@ -38,7 +38,15 @@
     <p>Pas op voor loslopende bits.</p>
 </div>
 
+<div class="result"></div>
+
 <script>
+
+    $.get(weatherUrl, function( data ) {
+        $( ".result" ).html( data );
+        alert( "Load was performed." );
+    });
+
     $("#okButton").on("click", function() {
         alert("The button was clicked.");
     });
