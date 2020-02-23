@@ -1,6 +1,6 @@
 const config = require('./config');
 
-const js = require('./tasks/js').js(config.localServerProjectPath);
+const js = require('./tasks/js').js(config.localFilesJs, config.localFilesJsOrder, config.localServerProjectPath);
 js.displayName = "js";
 
 const hello = function (done) {
