@@ -1,1 +1,1 @@
-module.exports = {voornaam:"Danny"};
+module.exports = {voornaam:"Danny", localServerProjectPath:"../ReversiRestApi/ReversiRestApi"};
