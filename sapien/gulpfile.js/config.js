@@ -1,0 +1,1 @@
+module.exports = {voornaam:"Danny"};
