@@ -49,6 +49,65 @@
 
     Game.init(afterInit);
 
+    const groeten = function(naDeGroet){
+        console.log('Gegroet');
+
+        naDeGroet();
+    };
+
+    const meeleven = function(){
+        console.log("Hoe is het met je?");
+    }
+
+    //groeten(meeleven);
+
+    //Promises - belofte
+
+    const a = function(){
+        setTimeout(function () {
+            console.log("a");
+        }, 1000);
+    };
+
+    const b = function(){
+        console.log("b");
+    };
+
+    //a();
+    //b();
+
+    const som = function (a, b) {
+        return a + b;
+    };
+
+    //Resolve meegeven as callback in de constructor.
+    //De promise klasse roept de callback aan met twee
+    //Methodes van de klasse zelf: resolve en reject.
+    //Deze zijn dus beschikbaar in de callback.
+    const resolver = function (resolve, reject) {
+        setTimeout(function () {
+            //reject("Woops, niet goed!");
+            resolve("Supercalifragilicious");
+        }, 4000);
+    };
+
+    const p1 = new Promise(resolver);
+
+    //Resolved waarde opvangen en errors opvangen
+    p1.then(function (result) {
+        debugger;
+        console.log(result);
+        console.log("b");
+
+        //Je mag zowel een waarde als een Promise returnen!
+        return "a en b";
+    }).then(result => {
+        console.log(result);
+        throw new Error("Nee zeg, wat een ramp, het gaat fout!");
+    }).catch(err => { //errors worden opgavengen in een catch, ook van een eerdere .then's
+        console.log(`Fout: ${err.message}`);
+    });
+
 </script>
 
 </body>
