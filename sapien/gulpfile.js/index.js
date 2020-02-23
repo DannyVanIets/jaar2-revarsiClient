@@ -1,6 +1,7 @@
+const config = require('./config');
+
 const hello = function (done) {
-    //console.log(`Groeten van ${config.voornaam}!`)
-    console.log(`Groeten van Gulp!`)
+    console.log(`Groeten van ${config.voornaam}!`);
     done();
 };
 
