@@ -1,14 +1,34 @@
 .invitation{
-    margin: 5px;
+    margin: 5%;
     padding: 5px;
     border: 1px solid black;
     background-color: lawngreen;
     flex-wrap: wrap;
     display: none;
+    width: 50%;
 }
 
-.CloseButton{
+.invitation__close{
+    width: 100%;
+    text-align: right;
+}
+
+.fa-check{
+    font-size: 50px;
+}
+
+.text{
+    width: 100%;
+    flex-wrap:  wrap;
     display: flex;
     align-items: center;
-    justify-content: right;
+}
+
+.text i{
+    padding-right: 1%;
+}
+
+.invitation footer{
+    width: 100%;
+    text-align: right;
 }
