@@ -1,3 +1,43 @@
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 h1{
     color: blue;
+}
+
+nav{
+    background-color: black;
+    height: 100px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#links{
+    background-color: gray;
+    height: 200px;
+    width: 50%;
+    align-items: center;
+}
+
+#rechts{
+    background-color: green;
+    height: 200px;
+    width: 50%;
+}
+
+footer{
+    background-color: black;
+    height: 100px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
 }
