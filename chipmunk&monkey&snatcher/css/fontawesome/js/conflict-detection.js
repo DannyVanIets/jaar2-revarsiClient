@@ -656,7 +656,7 @@
     var styleTags = Array.from(DOCUMENT.getElementsByTagName('style')).filter(function (t) {
       if (t.hasAttribute(detectionIgnoreAttr)) {
         return false;
-      } // If the browser has loaded the FA5 CSS, let's not test that <style> element.
+      } // If the browser has loaded the FA5 css, let's not test that <style> element.
       // Its enough that we'll be testing for traces of the corresponding JS being loaded, and testing
       // this <style> would only produce a false negative anyway.
 

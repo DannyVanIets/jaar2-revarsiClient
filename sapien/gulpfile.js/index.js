@@ -5,6 +5,9 @@ var browserSync = require('browser-sync').create();
 const js = require('./tasks/js').js(config.localFilesJs, config.localFilesJsOrder, config.localServerProjectPath);
 js.displayName = "js";
 
+const sass = require('./tasks/sass').sass(config.localServerProjectPath, config.sass);
+sass.displayName = 'sass';
+
 const hello = function (done) {
     console.log(`Groeten van ${config.voornaam}!`);
     done();
@@ -17,10 +20,13 @@ const css = function (done){
 
 const watchFiles = () => {
     browserSync.init({server: {baseDir: "./"}});
+    //Meerdere keren watch aanroepen mag voor andere taken!
 
     watch(["./css/*.css"], series(css));
-    //Meerdere keren watch aanroepen mag voor andere taken!
-    watch(["./css/*.css"]).on("change", browserSync.reload);
+
+    watch(['./css/*.scss', './features/**/*.scss'], series(sass));
+
+    watch(["./dist/css/*.css"]).on("change", browserSync.reload);
 };
 watchFiles.displayName = "watch";
 

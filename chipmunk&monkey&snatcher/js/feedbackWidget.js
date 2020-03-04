@@ -1,6 +1,6 @@
 $(function () {
     console.log("Ready!");
-    let fw = new FeedbackWidget("feedback-success");
+    /*let fw = new FeedbackWidget("feedback-success");
     fw.show("Veel success ermee!", "success");
 
     let logShow = {
@@ -12,14 +12,28 @@ $(function () {
     fw.show("Niet in slaap vallen!", "danger");
     fw.show("Pas op!", "danger");
 
-    fw.history();
+    fw.history();*/
 
-    $(".showButton").on("click", function() {
-        $(".invitation").attr("style", "display: flex");
+    let fw = new FeedbackWidget("message");
+
+    $(".showSuccess").on("click", function() {
+        fw.show("Mike wil deelnemen aan jou spel. Geef akkoord. Nu.", "success");
+    });
+
+    $(".showError").on("click", function() {
+        fw.show("Er is een error! Alsjeblieft paniek!", "error");
     });
 
     $(".closeButton").on("click", function() {
-        $(".invitation").attr("style", "display: none");
+        fw.hide();
+    });
+
+    $(".acceptButton").on("click", function() {
+        fw.hide();
+    });
+
+    $(".declineButton").on("click", function() {
+        fw.hide();
     });
 });
 
@@ -34,9 +48,8 @@ class FeedbackWidget {
     }
 
     show(message, type) {
-        var x = document.getElementById(this._elementId);
-        //x.style.display = "block";
-        $(x).text(message);
+        var x = document.getElementsByClassName(this._elementId);
+        var icon = document.getElementsByClassName("icon");
 
         let logObject = {
             message: message,
@@ -44,21 +57,26 @@ class FeedbackWidget {
         };
 
         this.log(logObject);
+        $(".message__text").html(message);
 
         if(type === "success")
         {
-            $(x).removeClass("alert-danger");
-            $(x).addClass("alert-success");
+            $(x).removeClass("error");
+            $(x).addClass("success");
+            $(icon).addClass("fas fa-check");
+            $(icon).removeClass("fa-times");
         }
         else
         {
-            $(x).removeClass("alert-success");
-            $(x).addClass("alert-danger");
+            $(x).removeClass("success");
+            $(x).addClass("error");
+            $(icon).addClass("fas fa-times");
+            $(icon).removeClass("fa-check");
         }
     }
 
     hide() {
-        var x = document.getElementById(this._elementId);
+        var x = document.getElementsByClassName(this._elementId);
         x.style.display = "none";
     }
 

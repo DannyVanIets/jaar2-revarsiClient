@@ -7,7 +7,7 @@
     <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -23,7 +23,7 @@
     <!--Laad in fontawesome-->
     <link href="css/fontawesome/css/all.css" rel="stylesheet">
 
-    <!--Laad in CSS-->
+    <!--Laad in css-->
     <link rel="stylesheet" type="text/css" href="css/css.css">
 
     <!--Laad in feedbackWidget.js en Game.js -->
@@ -34,30 +34,21 @@
 
 <section>
     <form action="" method="post">
-        <input type="button" name="show" value="Show" class="showButton">
+        <input type="button" name="showSuccess" value="Show success" class="showSuccess">
+        <input type="button" name="showError" value="Show error" class="showError">
     </form>
 </section>
 
-<section>
-    <div id="feedback-success" class="alert" role="alert" style="display:none">
-        <p>Veel succes met deze module!</p>
-    </div>
-
-    <div id="feedback-danger" class="alert" role="alert" style="display:none">
-        <p>Pas op voor loslopende bits.</p>
-    </div>
-</section>
-
-<section class="invitation">
-    <nav class="invitation__close">
+<section class="message">
+    <nav class="message__close">
         <form action="" method="post">
-            <input type="button" name="close" value="X" class="closeButton">
+            <input type="button" name="close" value="" class="closeButton fas">
         </form>
     </nav>
 
     <div class="text">
-        <i class="fas fa-check"></i>
-        <p>Mike wil deelnemen aan jou spel. Geef akkoord. Nu.</p>
+        <i class="icon"></i>
+        <p class="message__text"></p>
     </div>
 
     <footer>
