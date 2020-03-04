@@ -2,7 +2,7 @@
     margin: 5%;
     padding: 5px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 15px;
     flex-wrap: wrap;
     display: none;
     width: 50%;
@@ -39,7 +39,7 @@ P{
 }
 
 .text i{
-    padding-right: 1%;
+    padding-right: 3%;
 }
 
 .message footer{
