@@ -26,14 +26,17 @@ $(function () {
 
     $(".closeButton").on("click", function() {
         fw.hide();
+        console.log("Request is gesloten.");
     });
 
     $(".acceptButton").on("click", function() {
         fw.hide();
+        console.log("Request is geaccepteerd.");
     });
 
     $(".declineButton").on("click", function() {
         fw.hide();
+        console.log("Request is geweigerd.");
     });
 });
 
@@ -59,25 +62,37 @@ class FeedbackWidget {
         this.log(logObject);
         $(".message__text").html(message);
 
+        $(x).removeClass("fadeOut");
+        $(x).addClass("fadeIn");
+
         if(type === "success")
         {
             $(x).removeClass("error");
+            $(icon).removeClass("fa-times");
+
             $(x).addClass("success");
             $(icon).addClass("fas fa-check");
-            $(icon).removeClass("fa-times");
         }
         else
         {
             $(x).removeClass("success");
+            $(icon).removeClass("fa-check");
+
             $(x).addClass("error");
             $(icon).addClass("fas fa-times");
-            $(icon).removeClass("fa-check");
         }
+
+        $(x).show();
     }
 
     hide() {
         var x = document.getElementsByClassName(this._elementId);
-        x.style.display = "none";
+        $(x).removeClass("fadeIn");
+        $(x).addClass("fadeOut");
+
+        setTimeout(function () {
+            $(x).hide();
+        }, 2000);
     }
 
     log(message){
