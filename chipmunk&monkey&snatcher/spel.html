@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spel</title>
+
+    <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/spelbordCss.css">
+</head>
+<body>
+    <section id="spelbord" class="spelbord">
+
+    </section>
+
+    <script>
+        var spelbord = "<div class='spelbord__velden'><br>";
+        var kleur = "wit";
+        var i;
+        var j;
+
+        for (i = 1; i <= 8; i++)
+        {
+            for (j = 1; j <= 8; j++)
+            {
+                spelbord += "<button id='spelbord__veld" + i + j + "' class='spelbord__veld' onclick='showFishie(" + i + ", " + j + ")'>";
+
+                if (i === 4 && j === 4 || i === 5 && j === 5)
+                {
+                    spelbord += "<div class='fishie zwart'></div>";
+                }
+                else if (i === 4 && j === 5 || i === 5 && j === 4)
+                {
+                    spelbord += "<div class='fishie wit'></div>";
+                }
+
+                spelbord += "</button>";
+            }
+            spelbord += "<br>";
+        }
+
+        spelbord += "</div>";
+
+        document.getElementById("spelbord").innerHTML = spelbord;
+
+        function showFishie(i, j) {
+            document.getElementById("spelbord__veld" + i + j).innerHTML = "<div class='fishie " + kleur + "'></div>";
+
+            if(kleur === "wit")
+            {
+                kleur = "zwart";
+            }
+            else if (kleur === "zwart")
+            {
+                kleur = "wit";
+            }
+        }
+    </script>
+</body>
+</html>

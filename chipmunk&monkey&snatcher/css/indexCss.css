@@ -1,0 +1,153 @@
+.message{
+    margin: 5%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    display: none;
+    width: 50%;
+}
+
+.success{
+    background-color: lawngreen;
+    display: flex;
+}
+
+.error{
+    background-color: red;
+    display: flex;
+}
+
+.icon{
+    font-size: 40px;
+}
+
+.text{
+    width: 100%;
+    flex-wrap:  wrap;
+    display: flex;
+    align-items: center;
+}
+
+P{
+    margin: 0;
+}
+
+.text i{
+    padding-right: 3%;
+}
+
+.closeButton{
+    font-size: 25px;
+}
+
+.form__buttons{
+    margin-right: 2%;
+}
+
+input[type=button]
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.message__close{
+    width: 100%;
+    text-align: right;
+}
+
+.message__text{
+    color:	#B0B0B0;
+}
+
+.message footer{
+    width: 100%;
+    text-align: right;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fadeIn {
+        animation: fadeIn ease 1s;
+    }
+
+    .fadeOut {
+        animation: fadeOut ease 1s;
+    }
+
+    @keyframes fadeIn{
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity:1;
+        }
+        100% {
+            opacity:0;
+        }
+    }
+
+    .acceptButton {
+        position: relative;
+        animation-name: punch;
+        animation-delay: 2s;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes punch {
+        0%   {right: 0;}
+        25%   {right: -10px;}
+        50%   {right: -10px;}
+        75%   {right: 0;}
+        100% {right: 0;}
+    }
+
+    .declineButton {
+        position: relative;
+        animation-name: gettingPunched;
+        animation-delay: 2s;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes gettingPunched {
+        0%   {right: 0;}
+        25%   {right: 0;}
+        40%   {right: -10px;}
+        75%   {right: -10px;}
+        100% {right: 0;}
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .message{
+        margin-left: 25%;
+    }
+
+    .fas {
+        display: none;
+    }
+
+    .message__text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .message footer{
+        text-align: center;
+    }
+}
