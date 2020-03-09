@@ -41,11 +41,10 @@
         }
 
         spelbord += "</div>";
-
-        document.getElementById("spelbord").innerHTML = spelbord;
+        $("#spelbord").html(spelbord);
 
         function showFishie(i, j) {
-            document.getElementById("spelbord__veld" + i + j).innerHTML = "<div class='fishie " + kleur + "'></div>";
+            $("#spelbord__veld" + i + j).html("<div class='fishie " + kleur + "'></div>");
 
             if(kleur === "wit")
             {

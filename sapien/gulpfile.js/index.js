@@ -8,6 +8,9 @@ js.displayName = "js";
 const sass = require('./tasks/sass').sass(config.localServerProjectPath, config.sass);
 sass.displayName = 'sass';
 
+const html = require('./tasks/html').html();
+html.displayName = 'html';
+
 const hello = function (done) {
     console.log(`Groeten van ${config.voornaam}!`);
     done();
@@ -31,6 +34,10 @@ const watchFiles = () => {
 watchFiles.displayName = "watch";
 
 exports.default = hello;
+
+exports.sass = sass;
+
+exports.html = html;
 
 exports.js = js;
 
