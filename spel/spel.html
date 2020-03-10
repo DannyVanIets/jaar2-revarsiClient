@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spel</title>
+
+    <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+    <!--<link rel="stylesheet" type="text/css" href="sass/spelbordCss.scss">-->
+    <link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
+
+    <script type="text/javascript" src="gulpfile.js/Game.js"></script>
+</head>
+<body>
+    <section id="spelbord" class="spelbord">
+
+    </section>
+
+    <script>
+        Game.Reversi.init();
+    </script>
+</body>
+</html>
