@@ -11,6 +11,12 @@ sass.displayName = 'sass';
 const html = require('./tasks/html').html();
 html.displayName = 'html';
 
+const vendor = require('./tasks/vendor').vendor(config.vendorFiles, config.localServerProjectPath);
+vendor.displayName = 'vendor';
+
+const template = require('./tasks/template').template(config.templateFiles);
+template.displayName = 'template';
+
 const hello = function (done) {
     console.log(`Groeten van ${config.voornaam}!`);
     done();
@@ -42,3 +48,7 @@ exports.html = html;
 exports.js = js;
 
 exports.watch = watchFiles;
+
+exports.vendor = vendor;
+
+exports.template = template;

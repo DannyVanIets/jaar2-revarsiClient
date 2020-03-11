@@ -7,4 +7,10 @@ module.exports = {
         'css/*.scss',
         'features/**/*.scss',
     ],
+    vendorFiles: [
+        'vendor/**/*.js',
+    ],
+    templateFiles: [
+        'templates/**/*.hbs',
+    ]
 };

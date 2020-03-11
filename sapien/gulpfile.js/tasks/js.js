@@ -15,7 +15,7 @@ const fn = function(filesJs, filesJsOrder, backendPath) {
             }))
             .pipe(uglify({compress: true}))
             .pipe(dest("./dist/js"))
-            .pipe(dest(backendPath));
+            .pipe(dest(backendPath + '/wwwroot/js'));
     }
 };
 

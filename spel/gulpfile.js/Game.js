@@ -65,18 +65,17 @@ Game.Reversi = (function (elementIdSpelbord) {
 
                 if (i === 4 && j === 4 || i === 5 && j === 5)
                 {
-                    spelbord += "<div class='fishie zwart'></div>";
+                    spelbord += "<div class='fishie zwart fadeIn'></div>";
                 }
                 else if (i === 4 && j === 5 || i === 5 && j === 4)
                 {
-                    spelbord += "<div class='fishie wit'></div>";
+                    spelbord += "<div class='fishie wit fadeIn'></div>";
                 }
 
                 spelbord += "</button>";
             }
             spelbord += "<br>";
         }
-
         spelbord += "</div>";
 
         document.getElementById(configMap.elementId).innerHTML = spelbord;
@@ -84,7 +83,7 @@ Game.Reversi = (function (elementIdSpelbord) {
 
     //Public method
     const showFishie = function(i, j){
-        document.getElementById("spelbord__veld" + i + j).innerHTML = "<div class='fishie " + configMap.kleur + "'></div>";
+        document.getElementById("spelbord__veld" + i + j).innerHTML = "<div class='fishie fadeIn " + configMap.kleur + "'></div>";
 
         if(configMap.kleur === "wit")
         {
