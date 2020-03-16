@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let Game = (function () {
+
+    })();
+
+    Game.API = (function () {
+        const configMap = {
+            url: 'https://www.amiiboapi.com/api/amiibo/?name=mario'
+        };
+
+        //Get amiibo is de kortste versie van de opdracht.
+        const getAmiibo = function (){
+            Game.Data.get(configMap.url).then;
+        };
+
+        const init = function () {
+            Game.Data.get(configMap.url).then;
+        };
+
+        return {
+            init: init
+        }
+    })();
+
+    Game.Templates = (function () {
+
+        const getTemplate = (templateName) => {
+            //split <spa_templates.>
+            return spa_templates[templateName];
+        };
+
+        const parseTemplates = (templateName, data) => {
+
+            //spa_templates.feedbackWdiget.body
+            const template = getTemplate(templateName);
+        };
+    })();
+
+</script>
+
+</body>
+</html>
