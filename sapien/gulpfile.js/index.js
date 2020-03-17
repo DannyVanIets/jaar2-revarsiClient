@@ -14,8 +14,8 @@ html.displayName = 'html';
 const vendor = require('./tasks/vendor').vendor(config.vendorFiles, config.localServerProjectPath);
 vendor.displayName = 'vendor';
 
-const template = require('./tasks/templates').template(config.templateFiles);
-template.displayName = 'template';
+const templates = require('./tasks/templates').templates(config.templatesFiles, config.localServerProjectPath);
+templates.displayName = 'templates';
 
 const hello = function (done) {
     console.log(`Groeten van ${config.voornaam}!`);
@@ -51,4 +51,4 @@ exports.watch = watchFiles;
 
 exports.vendor = vendor;
 
-exports.template = template;
+exports.templates = templates;

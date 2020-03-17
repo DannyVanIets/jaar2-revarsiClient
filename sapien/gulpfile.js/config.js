@@ -10,7 +10,7 @@ module.exports = {
     vendorFiles: [
         'vendor/**/*.js',
     ],
-    templateFiles: [
+    templatesFiles: [
         'templates/**/*.hbs',
     ]
 };
