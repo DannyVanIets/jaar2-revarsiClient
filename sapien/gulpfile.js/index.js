@@ -14,7 +14,7 @@ html.displayName = 'html';
 const vendor = require('./tasks/vendor').vendor(config.vendorFiles, config.localServerProjectPath);
 vendor.displayName = 'vendor';
 
-const templates = require('./tasks/templates').templates(config.templatesFiles, config.localServerProjectPath);
+const templates = require('./tasks/templates').templates(config.templatesFiles, config.partialFiles, config.localServerProjectPath);
 templates.displayName = 'templates';
 
 const hello = function (done) {

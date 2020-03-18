@@ -11,6 +11,9 @@ module.exports = {
         'vendor/**/*.js',
     ],
     templatesFiles: [
-        'templates/**/*.hbs',
+        'templates/**/[^_]*.hbs',
+    ],
+    partialFiles: [
+        'templates/**/_*.hbs',
     ]
 };

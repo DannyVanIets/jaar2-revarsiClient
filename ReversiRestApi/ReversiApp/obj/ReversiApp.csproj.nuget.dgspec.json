@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\git\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj": {}
+    "D:\\php\\github\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj": {}
   },
   "projects": {
-    "D:\\code\\git\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj": {
+    "D:\\php\\github\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\git\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj",
+        "projectUniqueName": "D:\\php\\github\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj",
         "projectName": "ReversiApp",
-        "projectPath": "D:\\code\\git\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj",
+        "projectPath": "D:\\php\\github\\revarsi\\ReversiRestApi\\ReversiApp\\ReversiApp.csproj",
         "packagesPath": "C:\\Users\\Danny\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\git\\revarsi\\ReversiRestApi\\ReversiApp\\obj\\",
+        "outputPath": "D:\\php\\github\\revarsi\\ReversiRestApi\\ReversiApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Danny\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -78,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
