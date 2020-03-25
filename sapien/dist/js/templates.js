@@ -65,7 +65,7 @@ this["spa_templates"]["templates"]["speelbord"]["speelbord"] = Handlebars.templa
         return undefined
     };
 
-  return ((stack1 = container.invokePartial(lookupProperty(partials,"fishie"),depth0,{"name":"fishie","hash":{"kleur":(depth0 != null ? lookupProperty(depth0,"wit") : depth0)},"data":data,"indent":"                    ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
+  return ((stack1 = container.invokePartial(lookupProperty(partials,"fishe"),depth0,{"name":"fishe","hash":{"kleur":(depth0 != null ? lookupProperty(depth0,"wit") : depth0)},"data":data,"indent":"                    ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
 },"5":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -74,7 +74,7 @@ this["spa_templates"]["templates"]["speelbord"]["speelbord"] = Handlebars.templa
         return undefined
     };
 
-  return ((stack1 = container.invokePartial(lookupProperty(partials,"fishie"),depth0,{"name":"fishie","hash":{"kleur":(depth0 != null ? lookupProperty(depth0,"zwart") : depth0)},"data":data,"indent":"                    ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
+  return ((stack1 = container.invokePartial(lookupProperty(partials,"fishe"),depth0,{"name":"fishe","hash":{"kleur":(depth0 != null ? lookupProperty(depth0,"zwart") : depth0)},"data":data,"indent":"                    ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
