@@ -2,3 +2,7 @@
 sapien/dist/index.html
 ReversiRestApi/ReversiApp/.vs/ReversiApp/v16/Server/sqlite3/db.lock
 ReversiRestApi/ReversiApp/obj/Debug/netcoreapp3.1/ReversiApp.csprojAssemblyReference.cache
+ReversiRestApi/ReversiApp/.vs/ReversiApp/v16/Server/sqlite3/storage.ide-wal
+ReversiRestApi/ReversiApp/.vs/ReversiApp/v16/Server/sqlite3/storage.ide-shm
+ReversiRestApi/ReversiApp/.vs/ReversiApp/v16/Server/sqlite3/storage.ide
+ReversiRestApi/ReversiApp/.vs/ReversiApp/DesignTimeBuild/.dtbcache
