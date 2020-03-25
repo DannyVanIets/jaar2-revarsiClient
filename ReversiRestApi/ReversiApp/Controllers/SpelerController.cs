@@ -35,6 +35,18 @@ namespace ReversiApp.Controllers
 
         //Get variant, HttpGet is optioneel
         [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var spelerModel = _context.Speler.Find(id);
+            if (spelerModel == null)
+            {
+                return NotFound();
+            }
+            return View(spelerModel);
+        }
+
+        //Get variant, HttpGet is optioneel
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             var spelerModel = _context.Speler.Find(id);

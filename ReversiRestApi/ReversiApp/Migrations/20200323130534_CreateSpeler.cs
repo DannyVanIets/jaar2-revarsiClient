@@ -2,7 +2,7 @@
 
 namespace ReversiApp.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class CreateSpeler : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,9 @@ namespace ReversiApp.Migrations
                     SpelerId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Naam = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     Wachtwoord = table.Column<string>(nullable: true),
+                    Rol = table.Column<string>(nullable: true),
                     Token = table.Column<string>(nullable: true),
                     Kleur = table.Column<int>(nullable: false)
                 },

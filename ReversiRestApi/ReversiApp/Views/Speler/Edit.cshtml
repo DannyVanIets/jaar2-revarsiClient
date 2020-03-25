@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<h4>SpelerModel</h4>
+<h4>Speler</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,9 +19,19 @@
                 <span asp-validation-for="Naam" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Wachtwoord" class="control-label"></label>
                 <input asp-for="Wachtwoord" class="form-control" />
                 <span asp-validation-for="Wachtwoord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rol" class="control-label"></label>
+                <input asp-for="Rol" class="form-control" />
+                <span asp-validation-for="Rol" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Token" class="control-label"></label>
@@ -30,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Kleur" class="control-label"></label>
-                <select asp-for="Kleur" class="form-control"></select>
+                <select asp-for="Kleur" asp-items="new SelectList(Enum.GetValues(typeof(Kleur)))" class="form-control"></select>
                 <span asp-validation-for="Kleur" class="text-danger"></span>
             </div>
             <div class="form-group">

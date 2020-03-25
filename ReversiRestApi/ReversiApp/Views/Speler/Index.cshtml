@@ -16,7 +16,13 @@
                 @Html.DisplayNameFor(model => model.Naam)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Wachtwoord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rol)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Token)
@@ -34,7 +40,13 @@
                 @Html.DisplayFor(modelItem => item.Naam)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Wachtwoord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rol)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Token)

@@ -9,8 +9,8 @@ using ReversiApp.DAL;
 namespace ReversiApp.Migrations
 {
     [DbContext(typeof(SpelerContext))]
-    [Migration("20200309132908_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200323130534_CreateSpeler")]
+    partial class CreateSpeler
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,10 +27,16 @@ namespace ReversiApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Kleur")
                         .HasColumnType("int");
 
                     b.Property<string>("Naam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rol")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Token")
