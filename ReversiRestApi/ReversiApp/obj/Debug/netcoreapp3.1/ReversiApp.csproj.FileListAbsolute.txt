@@ -152,8 +152,6 @@ D:\code\git\revarsi\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.1\Microsoft.
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.1\ReversiApp.StaticWebAssets.xml
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\ReversiApp.MvcApplicationPartsAssemblyInfo.cs
-D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\ReversiApp.MvcApplicationPartsAssemblyInfo.cache
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmailChange.cshtml.g.cs
@@ -194,3 +192,7 @@ D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\Razor\Area
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\ReversiApp.genruntimeconfig.cache
+D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\ReversiApp.csproj.CoreCompileInputs.cache
+D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\ReversiApp.MvcApplicationPartsAssemblyInfo.cs
+D:\code\git\revarsi\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.1\ReversiApp.MvcApplicationPartsAssemblyInfo.cache

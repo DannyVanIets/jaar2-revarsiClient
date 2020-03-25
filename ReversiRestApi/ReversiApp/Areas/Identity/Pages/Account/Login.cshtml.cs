@@ -12,6 +12,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using ReversiApp.Areas.Identity.Data;
+using System.Net;
+using Newtonsoft.Json;
+using ReversiApp.Models;
 
 namespace ReversiApp.Areas.Identity.Pages.Account
 {
@@ -78,6 +81,24 @@ namespace ReversiApp.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
+                var response = Request.Form["g-recaptcha-response"];
+                //secret that was generated in key value pair
+                const string secret = "6Le15uMUAAAAALTlLQwcmG6zJNrfhEnbTGvMJnHE";
+
+                var client = new WebClient();
+                var reply = client.DownloadString(
+                        string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
+                    secret, response));
+
+                var captchaResponse = JsonConvert.DeserializeObject<CaptchaReponse>(reply);
+
+                //when response is false check for the error message
+                if (!captchaResponse.Success)
+                {
+                    ModelState.AddModelError(string.Empty, "Captcha check failed");
+                    return Page();
+                }
+
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);

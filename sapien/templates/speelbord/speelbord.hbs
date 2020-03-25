@@ -1,0 +1,15 @@
+<div class='spelbord__velden'>
+    {{~#each bord~}}
+        {{~#each~}}
+            <button id='spelbord__veld' class='spelbord__veld' onclick='Game.Reversi.showFishie({{@index}}, {{@../index}})'>
+                {{~#ifequel this 1~}}
+                    {{> fishie kleur=wit}}
+                {{~/ifequel~}}
+
+                {{~#ifequel this 2~}}
+                    {{> fishie kleur=zwart}}
+                {{~/ifequel~}}
+            </button>
+        {{~/each~}}
+    {{~/each~}}
+</div>

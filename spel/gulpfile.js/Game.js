@@ -1,5 +1,4 @@
 const urlForApi = "/api/url";
-const elementIdVoorSpelbord = "spelbord";
 
 let weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=zwolle&apikey=399c599ecf66641be477a03109aef585";
 
@@ -40,6 +39,8 @@ const Game = (function(urlForApi){
         }
     }
 })(urlForApi);
+
+const elementIdVoorSpelbord = "spelbord";
 
 Game.Reversi = (function (elementIdSpelbord) {
 

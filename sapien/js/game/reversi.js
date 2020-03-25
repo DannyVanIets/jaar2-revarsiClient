@@ -2,8 +2,6 @@ const elementIdVoorSpelbord = "spelbord";
 
 Game.Reversi = (function (elementIdSpelbord) {
 
-    console.log("Hallo vanuit module Reversi");
-
     let configMap = {
         elementId : elementIdSpelbord,
         kleur : "geen"
@@ -30,7 +28,6 @@ Game.Reversi = (function (elementIdSpelbord) {
                 {
                     spelbord += "<div class='fishie wit fadeIn'></div>";
                 }
-
                 spelbord += "</button>";
             }
             spelbord += "<br>";
@@ -46,10 +43,14 @@ Game.Reversi = (function (elementIdSpelbord) {
 
         if(configMap.kleur === "wit")
         {
+            Game.Stats.configMap.chartData.data.datasets[0]["data"][0] = Game.Stats.configMap.chartData.data.datasets[0]["data"][0] + 1;
+            Game.Stats.init("production");
             configMap.kleur = "zwart";
         }
         else if (configMap.kleur === "zwart")
         {
+            Game.Stats.configMap.chartData.data.datasets[0]["data"][1] = Game.Stats.configMap.chartData.data.datasets[0]["data"][1] + 1;
+            Game.Stats.init("production");
             configMap.kleur = "wit";
         }
     };

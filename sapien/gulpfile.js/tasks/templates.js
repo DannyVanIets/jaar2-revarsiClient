@@ -9,7 +9,7 @@ const path = require('path');
 //tip: vergeet niet dat de extensie .hbs is, dus de glob van
 //templateFiles kan er zo uitzien: templates/**/*.hbs
 
-const templates = function (templatesFiles, partialFiles, serverProjectPath) {
+const templates = function (templatesFiles, partialFiles, helperFiles, serverProjectPath) {
 
     const template = src(templatesFiles)
         // Compile each Handlebars template source file to a template function
@@ -40,8 +40,22 @@ const templates = function (templatesFiles, partialFiles, serverProjectPath) {
             }
         }));
 
+    const helpers = src(helperFiles)
+        .pipe(handlebars())
+        .pipe(order(helperFilesOrder, {base: '.'}))
+        .pipe(wrap('Handlebars.registerHelper(<%= processHelperName(file.relative) %>, <%= functionContents(file.path) %>);', {}, {
+            imports:{
+                processHelperName: function(filename) {
+                    return JSON.stringify(path.basename(filename, '.js'));
+                },
+                functionContents: function(filename) {
+                    return fs.readFileSync(filename);
+                }
+            }
+        }));
+
     return function () {
-        return merge(template, partials)
+        return merge(template, partials, helpers)
             .pipe(concat('templates.js'))
             .pipe(dest('dist/js/'))
             .pipe(dest(serverProjectPath + '/wwwroot/js'));

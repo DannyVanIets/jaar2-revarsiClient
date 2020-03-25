@@ -15,5 +15,8 @@ module.exports = {
     ],
     partialFiles: [
         'templates/**/_*.hbs',
+    ],
+    helperFiles: [
+        'templates/helpers/*.js',
     ]
 };

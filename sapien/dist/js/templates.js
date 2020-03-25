@@ -23,5 +23,5 @@ Handlebars.registerPartial("fiche", Handlebars.template({"compiler":[8,">= 4.3.0
 
   return "<div class='fishie fadeIn "
     + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"kleur") || (depth0 != null ? lookupProperty(depth0,"kleur") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"kleur","hash":{},"data":data,"loc":{"start":{"line":1,"column":26},"end":{"line":1,"column":35}}}) : helper)))
-    + "'></div>\"";
+    + "'></div>";
 },"useData":true}));
