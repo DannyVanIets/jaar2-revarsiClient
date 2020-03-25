@@ -1,13 +1,13 @@
 <div class='spelbord__velden'>
     {{~#each bord~}}
         {{~#each this~}}
-            <button id='spelbord__veld' class='spelbord__veld' onclick='Game.Reversi.showFishie({{@index}}, {{@../index}})'>
+            <button id='spelbord__veld{{@index}}{{@../index}}' class='spelbord__veld' onclick='Game.Reversi.showFishie({{@index}}, {{@../index}})'>
                 {{~#ifequel this 1~}}
-                    {{> fishe kleur=wit}}
+                    {{> fiche kleur="wit"}}
                 {{~/ifequel~}}
                 
                 {{~#ifequel this 2~}}
-                    {{> fishe kleur=zwart}}
+                    {{> fiche kleur="zwart"}}
                 {{~/ifequel~}}
             </button>
         {{~/each~}}

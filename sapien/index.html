@@ -5,14 +5,35 @@
     <title>Gulp uitwerken</title>
     <link rel="stylesheet" type="text/css" href="css/css.css"/>
 
+    <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../spel/sass/spelbordCss.scss">
+
     <script src="dist/js/app.js"></script>
     <script src="dist/js/vendor.js"></script>
     <script src="dist/js/templates.js"></script>
     <script src="js/game/Template.js"></script>
 </head>
 <body>
+
+
     <canvas id="myChart" width="400" height="400"></canvas>
     <script>
+        $("body").append(spa_templates.templates.speelbord.speelbord({bord:
+                    [
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 1, 2, 0, 0, 0 ],
+                        [ 0, 0, 0, 2, 1, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    ]
+            })
+        );
+
         Game.Stats.updateChart();
         Game.Stats.init("production");
     </script>
