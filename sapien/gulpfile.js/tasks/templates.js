@@ -5,6 +5,8 @@ const wrap = require('gulp-wrap');
 const declare = require('gulp-declare');
 const merge = require('merge-stream');
 const path = require('path');
+const fs = require('fs');
+const order = require('gulp-order');
 
 //tip: vergeet niet dat de extensie .hbs is, dus de glob van
 //templateFiles kan er zo uitzien: templates/**/*.hbs
@@ -42,7 +44,7 @@ const templates = function (templatesFiles, partialFiles, helperFiles, serverPro
 
     const helpers = src(helperFiles)
         .pipe(handlebars())
-        .pipe(order(helperFilesOrder, {base: '.'}))
+        .pipe(order(helperFiles, {base: '.'}))
         .pipe(wrap('Handlebars.registerHelper(<%= processHelperName(file.relative) %>, <%= functionContents(file.path) %>);', {}, {
             imports:{
                 processHelperName: function(filename) {
