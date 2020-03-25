@@ -5,7 +5,7 @@ Handlebars.registerHelper("ifequel", const equel = (function (){
         else
             return opts.inverse(this);
     }
-})(););
+})());
 this["spa_templates"] = this["spa_templates"] || {};
 this["spa_templates"]["templates"] = this["spa_templates"]["templates"] || {};
 this["spa_templates"]["templates"]["feedbackWidget"] = this["spa_templates"]["templates"]["feedbackWidget"] || {};
