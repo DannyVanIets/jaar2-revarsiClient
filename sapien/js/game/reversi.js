@@ -38,6 +38,7 @@ Game.Reversi = (function (elementIdSpelbord) {
 
     //Public method
     const showFishie = function(i, j){
+        configMap.kleur === "wit";
         document.getElementById("spelbord__veld" + i + j).innerHTML = "<div class='fishie fadeIn " + configMap.kleur + "'></div>";
 
         if(configMap.kleur === "wit")
