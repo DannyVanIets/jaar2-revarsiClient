@@ -4,13 +4,12 @@ Game.Reversi = (function (elementIdSpelbord) {
 
     let configMap = {
         elementId : elementIdSpelbord,
-        kleur : "geen"
+        kleur : "wit"
     };
 
     //Private method
     const laadInSpelbord = function(){
         var spelbord = "<div class='spelbord__velden'><br>";
-        configMap.kleur = "wit";
         var i;
         var j;
 

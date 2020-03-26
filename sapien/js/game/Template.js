@@ -11,13 +11,20 @@ Game.Template = (function () {
 
     const getTemplate = (templateName) => {
         //split <spa_templates.>
-        return spa_templates[templateName];
+        const props = templateName.split(".");
+        let template = spa_templates.templates;
+
+        props.forEach(element => {
+            template = template[element];
+        });
+
+        return template;
     };
 
     const parseTemplates = (templateName, data) => {
         //spa_templates.feedbackWdiget.body
         const template = getTemplate(templateName);
-        return template;
+        return template(data);
     };
 
     //Public method thanks to the return.
