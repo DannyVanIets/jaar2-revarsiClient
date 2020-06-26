@@ -1,6 +1,6 @@
 $(function () {
     console.log("Ready!");
-    /*let fw = new FeedbackWidget("feedback-success");
+    let fw = new FeedbackWidget("feedback-success");
     fw.show("Veel success ermee!", "success");
 
     let logShow = {
