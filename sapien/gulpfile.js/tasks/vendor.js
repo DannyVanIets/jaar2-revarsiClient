@@ -6,7 +6,7 @@ const vendor = function (vendorFiles, localServerProjectPath) {
         return src(vendorFiles)
             .pipe(concat("vendor.js"))
             .pipe(dest("dist/js"))
-            .pipe(dest(localServerProjectPath + '/wwwroot/js'));
+            .pipe(dest(localServerProjectPath));
     }
 };
 

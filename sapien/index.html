@@ -13,29 +13,20 @@
     <script src="dist/js/app.js"></script>
     <script src="dist/js/vendor.js"></script>
     <script src="dist/js/templates.js"></script>
-    <script src="js/game/Template.js"></script>
 </head>
 <body>
+    <div class="aanDeBeurt">
 
+    </div>
+    <div class="game">
+
+    </div>
 
     <canvas id="myChart" width="400" height="400"></canvas>
     <script>
-        $("body").append(spa_templates.templates.speelbord.speelbord({bord:
-                    [
-                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                        [ 0, 0, 0, 1, 2, 0, 0, 0 ],
-                        [ 0, 0, 0, 2, 1, 0, 0, 0 ],
-                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-                    ]
-            })
-        );
-
-        Game.Stats.updateChart();
-        Game.Stats.init("production");
+        //Game.Stats.updateChart();
+        //Game.Stats.init("production");
+        Game.init(0);
     </script>
 </body>
 </html>

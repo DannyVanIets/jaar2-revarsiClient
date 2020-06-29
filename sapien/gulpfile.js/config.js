@@ -1,6 +1,6 @@
 module.exports = {
     voornaam:"Danny",
-    localServerProjectPath:"../../ReversiServer/ReversiRestApi/ReversiRestApi",
+    localServerProjectPath:"../../ReversiServer/ReversiApp/wwwroot/dist/",
     localFilesJs:"js/**/*.js",
     localFilesJsOrder:["js/*.js", "js/game/*.js"],
     sass: [

@@ -5,7 +5,8 @@ let weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=zwolle&apikey
 const Game = (function(urlForApi){
 
     let configMap = {
-        apiUrl : urlForApi
+        apiUrl : urlForApi,
+        id : 0
     };
 
     let stateMap = {
@@ -25,17 +26,35 @@ const Game = (function(urlForApi){
         console.log("De huidige game staat is: " + tekst);
     };
 
-    //Private function init
-    const privateInit = function(){
-        console.log(configMap.apiUrl);
+    const UpdateGame = function () {
+        // Eerst check je of het bord bezig is.
+        Game.Data.get(`api/Spel/IsBezig/${configMap.id}`).then(function (status) {
+            if(status) {
+                Game.Data.get(`api/Spel/Speelbord/${configMap.id}`).then(function (array) {
+                    console.log("1");
+                    $(".game").html(spa_templates.templates.speelbord.speelbord({
+                        //bord: array[0].data
+                    }));
+                });
+
+                // Zo kan je ook de beurt opvragen.
+                Game.Data.get(`api/Spel/AanDeBeurt/${configMap.id}`).then(function (color) {
+                    console.log("2");
+                    console.log(color);
+                    $(".aanDeBeurt").html("De kleur " + color + " is aan de beurt!");
+                });
+            } else {
+                console.log("3");
+                location.reload();
+            }
+        });
     };
 
     //Waarde/object geretourneerd aan de outer scope
     return {
-        init: function(){
-            privateInit();
-            afterInit();
-            window.setInterval(_getCurrentGameState, 2000);
+        init: function(id){
+            configMap.id = id;
+            window.setInterval(UpdateGame, 2000);
         }
     }
 })(urlForApi);
@@ -49,7 +68,7 @@ Game.Stats = (function () {
             {
                 type: 'bar',
                 data: {
-                    labels: ['Speler1', 'Speler2', 'Speler3', 'Speler4', 'Speler5', 'Speler6'],
+                    labels: ['Speler1', 'Speler2'],
                     datasets: [{
                         label: 'Aantal gewonnen games',
                         data: [12, 19, 3, 5, 2, 3],
@@ -85,7 +104,7 @@ Game.Stats = (function () {
     };
 
     const stateMap = {
-        enviroment : "productie"
+        enviroment : "production"
     };
 
     const getMockData = function(url){
@@ -100,15 +119,15 @@ Game.Stats = (function () {
     const updateChart = function () {
         //Als enviroment productie is, request aan de productie omgeven doen.
         //Als het development is, dan getMockData gebruiken om een resultaat te retourneren
-        if(stateMap.enviroment !== "productie")
+        if(stateMap.enviroment !== "production")
         {
-            /*return $.get()
+            return $.get()
                 .then(r => {
                     return r
                 })
                 .catch(e => {
                     console.log(e.message);
-                });*/
+                });
         }
         else if (stateMap.enviroment !== "development")
         {

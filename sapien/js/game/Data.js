@@ -1,13 +1,21 @@
 Game.Data = (function () {
 
     let configMap = {
-        apiKey: "399c599ecf66641be477a03109aef585",
         mock: [
-            {
-                url: "api/Spel/Beurt",
-                data: 0
-            }
-        ]
+                {
+                    url: 'api/spel/0',
+                    data: [
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 1, 2, 0, 0, 0 ],
+                        [ 0, 0, 0, 2, 1, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    ]
+                }
+            ]
     };
 
     let stateMap = {
@@ -28,6 +36,8 @@ Game.Data = (function () {
     const get = function(url){
         //Als enviroment productie is, request aan de productie omgeven doen.
         //Als het development is, dan getMockData gebruiken om een resultaat te retourneren
+
+        //Zorg ervoor dat je hier checkt of er een API wordt aangeroepen.
         if(stateMap.enviroment !== "productie")
         {
             return $.get(url)
@@ -62,7 +72,6 @@ Game.Data = (function () {
         {
             //Gegevens teruggeven uit de configmap op basis van de urlgegevens
             console.log(configMap.mock.indexOf(url));
-
         }
         else
         {

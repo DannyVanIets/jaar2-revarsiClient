@@ -52,3 +52,5 @@ exports.watch = watchFiles;
 exports.vendor = vendor;
 
 exports.templates = templates;
+
+exports.all = parallel(js, vendor, templates, sass);

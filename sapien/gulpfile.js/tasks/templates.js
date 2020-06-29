@@ -60,7 +60,7 @@ const templates = function (templatesFiles, partialFiles, helperFiles, serverPro
         return merge(template, partials, helpers)
             .pipe(concat('templates.js'))
             .pipe(dest('dist/js/'))
-            .pipe(dest(serverProjectPath + '/wwwroot/js'));
+            .pipe(dest(serverProjectPath));
     }
 };
 
