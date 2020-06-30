@@ -1,14 +1,11 @@
 Game.API = (function () {
 
-    let configMap = {
-    };
-
     //Public method thanks to the return.
-    const init = function(){
-
+    const getRandomFact = function(){
+        return Game.Data.get(`https://uselessfacts.jsph.pl/random.json`);
     };
 
     return {
-        init: init
+        getRandomFact: getRandomFact
     };
 })();

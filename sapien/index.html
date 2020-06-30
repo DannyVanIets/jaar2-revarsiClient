@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Gulp uitwerken</title>
-    <link rel="stylesheet" type="text/css" href="css/css.css"/>
 
     <!--link afkomstig van https://cdnjs.com/libraries/jquery/-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
@@ -15,18 +14,22 @@
     <script src="dist/js/templates.js"></script>
 </head>
 <body>
+    <div class="randomFact">
+
+    </div>
     <div class="aanDeBeurt">
 
     </div>
     <div class="game">
 
     </div>
+    <div class="grafiek">
 
-    <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
     <script>
         //Game.Stats.updateChart();
         //Game.Stats.init("production");
-        Game.init(0);
+        Game.init(0, 1);
     </script>
 </body>
 </html>

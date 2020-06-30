@@ -4,11 +4,6 @@ Game.Template = (function () {
 
     };
 
-    //Private method
-    const privateInit = function(){
-        console.log("Doing private stuff");
-    };
-
     const getTemplate = (templateName) => {
         //split <spa_templates.>
         const props = templateName.split(".");
@@ -22,14 +17,8 @@ Game.Template = (function () {
     };
 
     const parseTemplates = (templateName, data) => {
-        //spa_templates.feedbackWdiget.body
         const template = getTemplate(templateName);
         return template(data);
-    };
-
-    //Public method thanks to the return.
-    const init = function(){
-        privateInit();
     };
 
     return {
