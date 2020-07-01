@@ -1,16 +1,11 @@
 Game.Model = (function () {
 
-    let configMap = {
-
-    };
-
     let getWeather  = function () {
         //Check if the temperatuur wordt meegegeven, zo niet, throw  dan een error NOG NIET GEDAAN!
         Game.Data.get(weatherUrl).then(data => console.log(data));
     };
 
     const _getGameState = function () {
-
         //Aanvragen via Game.Data met een token. Wat die token precies is, is nog onduidelijk
         let urlNaarToken = "api/Spel/Beurt/token.txt";
         //let currentGameState = Game.Data.get(urlNaarToken);

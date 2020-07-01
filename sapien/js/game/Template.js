@@ -1,9 +1,5 @@
 Game.Template = (function () {
 
-    let configMap = {
-
-    };
-
     const getTemplate = (templateName) => {
         //split <spa_templates.>
         const props = templateName.split(".");

@@ -1,16 +1,16 @@
 Game.Stats = (function () {
-    const _updateChart = function() {
-        let stoneCount = Game.Data.getStoneCount();
-        let turnArray = Game.Data.getTurns();
-        $('.grafiek').html(Game.Templates.parseTemplate("game.stats", {black: stoneCount.black, white: stoneCount.white, turns: turnArray}));
+    const updateGraph = function() {
+        let aantalFishies = Game.Data.aantalFishies();
+        let beurtenLijst = Game.Data.getAantalBeurten();
+        $('.grafiek').html(Game.Template.parseTemplates("chart.chart", {zwart: aantalFishies.zwart, wit: aantalFishies.wit, beurten: beurtenLijst}));
     };
 
     const init = function(){
-        setTimeout(function(){_updateChart}, 2000);
+        setTimeout(function(){updateGraph()}, 2000);
     };
 
     return {
         init: init,
-        updateChart: _updateChart
+        updateGraph: updateGraph
     }
 })();

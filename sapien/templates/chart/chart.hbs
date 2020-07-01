@@ -1,26 +1,26 @@
-<canvas id="statChart"></canvas>
+<canvas id="lijnGrafiek"></canvas>
 <script>
-    var ctx = document.getElementById('statChart').getContext('2d');
+    var ctx = document.getElementById('lijnGrafiek').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
 
         // The data for our dataset
         data: {
-            labels: [{{#each turns}}{{this}}{{#unless @last}},{{/unless}}{{/each}}],
+            labels: [{{#each beurten}}{{this}}{{#unless @last}},{{/unless}}{{/each}}],
             datasets: [{
                 label: 'Wit',
                 fill: false,
                 backgroundColor: '#bfb6b6',
                 borderColor: '#bfb6b6',
-                data: [{{#each white}}{{this}}{{#unless @last}},{{/unless}}{{/each}}],
+                data: [{{#each wit}}{{this}}{{#unless @last}},{{/unless}}{{/each}}],
             },
                 {
                     label: 'Zwart',
                     fill: false,
                     backgroundColor: '#000000',
                     borderColor: '#000000',
-                    data: [{{#each black}}{{this}}{{#unless @last}},{{/unless}}{{/each}}],
+                    data: [{{#each zwart}}{{this}}{{#unless @last}},{{/unless}}{{/each}}],
                 }]
         },
 

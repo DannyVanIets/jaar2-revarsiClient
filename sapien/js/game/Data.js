@@ -75,82 +75,83 @@ Game.Data = (function () {
         }
     };
 
-    const _getStoneCount = function() {
-        if (localStorage.getItem("stone_count") == null) {
-            let countObj = { black: [], white: [] };
-            localStorage.setItem("stone_count", JSON.stringify(countObj));
+    const aantalFishies = function() {
+        if (localStorage.getItem("aantal_fishies") == null) {
+            let countObj = { zwart: [], wit: [] };
+            localStorage.setItem("aantal_fishies", JSON.stringify(countObj));
             return countObj;
         }
         else {
-            return JSON.parse(localStorage.getItem("stone_count"));
+            return JSON.parse(localStorage.getItem("aantal_fishies"));
         }
     };
 
-    const _setStoneCount = function(color, count) {
-        let countObj = _getStoneCount();
-
+    const setAantalFishies = function(color, count) {
+        let countObj = aantalFishies();
+        console.log("3");
         if (color === 2) {
-            countObj.black.push(count);
+            console.log("4");
+            countObj.zwart.push(count);
         } else if (color === 1) {
-            countObj.white.push(count);
+            console.log("5");
+            countObj.wit.push(count);
         } else {
-            throw new Error("Invalid color!");
+            throw new Error("Onjuiste kleur!");
         }
-
-        localStorage.setItem("stone_count", JSON.stringify(countObj));
+        localStorage.setItem("aantal_fishies", JSON.stringify(countObj));
     };
 
-    const _getTurns = function() {
-        if (localStorage.getItem("turns") == null) {
-            let turns = [0];
-            localStorage.setItem("turns", JSON.stringify(turns));
-            return turns;
+    const getAantalBeurten = function() {
+        if (localStorage.getItem("beurten") == null) {
+            let beurten = [0];
+            localStorage.setItem("beurten", JSON.stringify(beurten));
+            return beurten;
         }
         else {
-            return JSON.parse(localStorage.getItem("turns"));
+            return JSON.parse(localStorage.getItem("beurten"));
         }
     };
 
-    const _setTurn = function(turn) {
-        let turnsArray = _getTurns();
-        turnsArray.push(turn);
-        localStorage.setItem("turns", JSON.stringify(turnsArray));
+    const setAantalBeurten = function(turn) {
+        let beurtenLijst = getAantalBeurten();
+        beurtenLijst.push(turn);
+        localStorage.setItem("beurten", JSON.stringify(beurtenLijst));
     };
 
-    const _countStones = function(board) {
-        let white = 0;
-        let black = 0;
+    const telFishies = function(board) {
+        let wit = 0;
+        let zwart = 0;
 
         for (let row of board) {
             for (let column of row) {
                 if (column === 1)
-                    white++;
+                    wit++;
                 else if (column === 2)
-                    black++;
+                    zwart++;
             }
         }
 
-        let currentCount = _getStoneCount();
-        let currentWhite = currentCount.white[currentCount.white.length - 1];
-        let currentBlack = currentCount.black[currentCount.black.length - 1];
-
+        let currentCount = aantalFishies();
+        let aantalWit = currentCount.wit[currentCount.wit.length - 1];
+        let aantalZwart = currentCount.zwart[currentCount.zwart.length - 1];
+        console.log("2");
         // Don't update the count in the local storage if it is the same as the last count (page is refreshed for instance)
-        if (white !== currentWhite || black !== currentBlack) {
-            _setStoneCount(2, black);
-            _setStoneCount(1, white);
+        if (wit !== aantalWit || zwart !== aantalZwart) {
+            console.log("1");
+            setAantalFishies(2, zwart);
+            setAantalFishies(1, wit);
 
-            let turnArray = _getTurns();
+            let beurtenLijst = getAantalBeurten();
             // Update turn counter if needed
-            if (currentCount.white.length === turnArray.length) {
-                let currentTurn = turnArray[turnArray.length - 1];
-                Game.Data.setTurn(currentTurn + 1);
+            if (currentCount.wit.length === beurtenLijst.length) {
+                let huidigeBeurt = beurtenLijst[beurtenLijst.length - 1];
+                Game.Data.setAantalBeurten(huidigeBeurt + 1);
             }
         }
     };
 
     //Public method thanks to the return.
     const init = function(environment){
-
         if(environment !== "production")
         {
             //Request aan de server doen. Nog niet een goed idee wat ze hier mee bedoelen.
@@ -172,6 +173,11 @@ Game.Data = (function () {
         init: init,
         get: get,
         put: _put,
-        stateMap: stateMap
+        stateMap: stateMap,
+        aantalFishies: aantalFishies,
+        setAantalFishies: setAantalFishies,
+        setAantalBeurten: setAantalBeurten,
+        getAantalBeurten: getAantalBeurten,
+        telFishies: telFishies
     };
 })();

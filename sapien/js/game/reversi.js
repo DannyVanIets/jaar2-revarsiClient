@@ -25,10 +25,12 @@ Game.Reversi = (function (elementIdSpelbord) {
                             $(".game").html(spa_templates.templates.speelbord.speelbord({
                                 bord: array
                             }));
+                            Game.Data.telFishies(array);
                         });
 
                         Game.Data.get(`api/Spel/AanDeBeurt/${Game.configMap.id}`).then(function (color) {
                             configMap.aanDeBeurt = color;
+                            Game.Stats.init();
                             if(color === 1) {
                                 configMap.aanDeBeurt = "wit";
                                 $(".aanDeBeurt").html("De kleur wit is aan de beurt!");
@@ -39,12 +41,8 @@ Game.Reversi = (function (elementIdSpelbord) {
                         });
 
                         if (configMap.kleur === "wit") {
-                            //Game.Stats.configMap.chartData.data.datasets[0]["data"][0] = Game.Stats.configMap.chartData.data.datasets[0]["data"][0] + 1;
-                            //Game.Stats.init("production");
                             configMap.kleur = "zwart";
                         } else if (configMap.kleur === "zwart") {
-                            //Game.Stats.configMap.chartData.data.datasets[0]["data"][1] = Game.Stats.configMap.chartData.data.datasets[0]["data"][1] + 1;
-                            //Game.Stats.init("production");
                             configMap.kleur = "wit";
                         }
                     } else {
@@ -55,8 +53,10 @@ Game.Reversi = (function (elementIdSpelbord) {
                 document.getElementById("spelbord__veld" + i + j).innerHTML = "<div class='fishie fadeIn " + configMap.kleur + "'></div>";
 
                 if (configMap.kleur === "wit") {
+                    Game.Stats.init();
                     configMap.kleur = "zwart";
                 } else if (configMap.kleur === "zwart") {
+                    Game.Stats.init();
                     configMap.kleur = "wit";
                 }
             }
