@@ -15,6 +15,7 @@ const templates = function (templatesFiles, partialFiles, helperFiles, serverPro
 
     const template = src(templatesFiles)
         // Compile each Handlebars template source file to a template function
+        // tHIS IS A TEST EMSSAGE
         .pipe(handlebars())
         // Wrap each template function in a call to Handlebars.template
         .pipe(wrap('Handlebars.template(<%= contents %>)', {}))
